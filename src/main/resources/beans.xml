@@ -5,4 +5,16 @@
 
     <bean id="messageService" class="com.infitecs.spring.xml.service.impl.MessageServiceImpl"/>
 
+    <bean id="customDao" class="com.infitecs.spring.xml.dao.impl.CustomOrcaleImpl" />
+
+    <bean id="customService" class="com.infitecs.spring.xml.service.impl.CustomServiceOrcaleImpl">
+        <constructor-arg ref="customDao" />
+    </bean>
+
+    <bean id="custom" class="com.infitecs.spring.xml.pojo.Custom">
+        <property name="name" value="peter" />
+        <property name="order" value="笔记本电脑" />
+        <property name="price" value="3000.00" />
+    </bean>
+
 </beans>
